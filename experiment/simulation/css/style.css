@@ -1,0 +1,452 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  scroll-behavior: smooth;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.max-width {
+  max-width: 80vw;
+  padding: 0 80px;
+  margin: auto;
+  /* border: 2px solid black; */
+}
+
+.max-width-sim{
+  max-width: 90vw;
+}
+
+/* Navbar Stylining */
+
+.navbar{
+  position: fixed;
+  top: 0;
+  overflow: none;
+  width: 100%;
+  padding: 30px 0;
+  background: #e7e7e7;
+  z-index: 9999;
+  border-bottom: 5px solid salmon;
+}
+
+.navbar .max-width{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar .menu li{
+  list-style: none;
+  display: inline-block;
+}
+
+.navbar .menu li a{
+  color: #333;
+  font-size: 18px;
+  margin:0 12px;
+  font-weight: 600;
+}
+
+.navbar .menu li a:hover{
+  color: black;
+}
+
+/* Section Styling */
+section{
+  min-height: 88vh;
+  margin-top: 30px;
+}
+
+.max-width h1{
+  font-size: 30px;
+}
+
+.innerText{
+  margin: 80px 0;
+}
+.innerText p{
+  margin: 10px 0;
+  padding: 8px 0;
+  font-size: 1.4rem;
+}
+
+.theory .innerText p{
+  padding: 5px 0;
+  font-size: 1.4rem;
+}
+.theory .innerText span{
+  font-size: 1.5rem;
+  margin: 10px 0;
+  padding: 10px 0;
+  color: rgb(0, 150, 196);
+}
+
+.theory .innerText .theo{
+  margin: 10px 0;
+}
+
+.theory .innerText ul, .theory .innerText ol{
+  padding: 20px 60px;
+  font-size: 1.4rem;
+}
+
+.aim .innerText p{
+  font-size: 30px;
+}
+
+.references .max-width ol li{
+  padding: 8px 10px;
+  margin: 10px;
+  font-size: 1.2rem;
+}
+
+.references .brb{
+  font-size: 1.2rem;
+}
+
+
+
+/* Footer Styling */
+footer{
+  height: 50px;
+  background-color: #555;
+  float: bottom;
+}
+
+
+
+/* Quiz Styling */
+
+.max-width .box .quiz {
+  margin: auto;
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  font-size: large;
+}
+.max-width .box .quiz .ans {
+  display: flex;
+  flex-direction: column;
+  margin: 0.3rem 0.5rem;
+}
+input[type="radio"],
+[type="checkbox"] {
+  vertical-align: middle;
+  margin: 1px 4px;
+}
+.box .quiz .ans label {
+  margin: 1.5px 0px;
+}
+.box .quiz .qsns {
+  margin: 5px 0px;
+  padding: 20px 40px;
+}
+.qsns #result {
+  color: rgb(7, 52, 201);
+  margin-top: 7pxpx;
+}
+.qsns .subm {
+  background-color: salmon;
+  height: 2rem;
+  width: auto;
+  padding: 6px 10px;
+  margin-bottom: 10px;
+  font-weight: 600;
+  border: none;
+}
+.qsns .subm:active{
+  color: #4d4d4d;
+  background-color: #e6e5e5;
+  border-color: #dfdfdf;
+}
+
+.qsns .subm:focus{
+  box-shadow: 0 0 0 0.2rem rgba(221, 221, 221, 0.5);
+}
+.box .quiz .segmentation {
+  height: 2px;
+  background-image: linear-gradient(
+    to right,
+    transparent,
+    rgb(204, 192, 255),
+    transparent
+  );
+}
+
+/* Simulator Styling */
+
+.decoder .max-width .box {
+  display: flex;
+  flex-direction: column;
+  margin: 32px 0;
+  flex-wrap: wrap;
+}
+.decoder .max-width .box .sim-box{
+  display: flex;
+}
+.decoder .max-width .box h1 {
+  font-size: 35px;
+  width: 100%;
+}
+.decoder .max-width .box p {
+  font-size: 22px;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+.ckt{
+  flex-wrap: wrap;
+  width: 43rem;
+}
+
+center {
+  padding: 20px 0 20px 0;
+}
+.mux {
+  text-align: center;
+  border: 2px solid;
+  width: 6.26rem;
+  height: 10.7rem;
+  background-color: #d1dae3;
+  border-radius: 0.45rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.gate {
+  height: 27.1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.circuit {
+  margin: 0.94rem 1.88rem;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  height: 26.8rem;
+}
+
+.btn {
+  width: 2rem;
+  height: 1.25rem;
+  border-radius: 5px;
+  z-index: 9;
+  margin-top: 0.3rem;
+}
+#vcc {
+  width: 2.7rem;
+  height: 1.88rem;
+  margin-top: 0.5rem;
+}
+.wires {
+  height: 22.5rem;
+  width: 11.27rem;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 10;
+  align-items: flex-end;
+  position: relative;
+}
+.hwires {
+  width: auto;
+  height: auto;
+  top: -22.2rem;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0px 2.38rem 0px 1.88rem;
+}
+.wire {
+  margin: 0.88rem 0px;
+  width: 8.26rem;
+  height: 2px;
+  background-color: black;
+  background-image: repeating-linear-gradient(
+    60deg,
+    transparent 10px,
+    #87530f 15px
+  );
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.ng {
+  top: -37.54rem;
+  position: relative;
+  left: -0.8rem;
+}
+.ng img {
+  height: 1.8rem;
+  width: 1.54rem;
+}
+
+.out {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  height: 21.16rem;
+  width: 1.38rem;
+  margin-top: -4px;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.owires {
+  height: 22.85rem;
+  width: 7.57rem;
+  display: flex;
+  flex-direction: column;
+  margin-top: -2px;
+  flex-shrink: 10;
+}
+.owire {
+  margin: 0.55rem 0px;
+  width: 6.13rem;
+  height: 2px;
+  background-color: black;
+  background-image: repeating-linear-gradient(
+    60deg,
+    transparent 10px,
+    #87530f 15px
+  );
+  display: flex;
+  justify-content: right;
+}
+
+.out {
+  font-size: 0.6rem;
+  border: 2px solid;
+  height: 1.31rem;
+  width: 1.4rem;
+  float: right;
+  padding-top: 1px;
+  border-radius: 45%;
+  margin-top: 1px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.ttable {
+  display: flex;
+  justify-content: center;
+  margin: 3.32rem 0px 0px 1.88rem;
+  flex-direction: column;
+  height: auto;
+  width: 43rem;
+  margin: auto;
+}
+.xbutts {
+  margin: 0.63rem 0.94rem;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  height: 2.19rem;
+}
+.faulty {
+  height: 25rem;
+  margin: 10px 0px;
+  width: auto;
+}
+
+.xbutts button {
+  background-color: salmon;
+  font-weight: bold;
+  text-align: center;
+  border: none;
+  /* box-shadow: 0 0 2px 2px rgb(216, 146, 146); */
+}
+.xbutts button:focus{
+  box-shadow: 0 0 0 0.2rem rgba(221, 221, 221, 0.5);
+}
+.xbutts button:active{
+  color: #4d4d4d;
+  background-color: #e6e5e5;
+  border: #dfdfdf;
+}
+.faulty table,
+th {
+  border: 1px solid;
+  font-size: 0.88rem;
+  padding: 0px 3px;
+  text-align: center;
+}
+.faulty th,
+td {
+  width: 2rem;
+}
+.faulty td {
+  height: 1.56rem;
+}
+.iposs {
+  height: 0.63rem;
+  width: 0.63rem;
+  border-radius: 50%;
+  background-color: blue;
+  list-style: none;
+  margin: -4px 8px;
+  z-index: 9;
+}
+.iposs span {
+  font-size: 0.69rem;
+  position: relative;
+  top: -0.92rem;
+  left: -0.3rem;
+}
+.oposs span {
+  font-size: 0.69rem;
+  position: relative;
+  top: -0.88rem;
+  left: -0.62rem;
+}
+.oposs {
+  height: 0.63rem;
+  width: 0.63rem;
+  border-radius: 50%;
+  background-color: blue;
+  list-style: none;
+  margin: -4px 2.13rem;
+  z-index: 9;
+}
+.faulty #sa1 {
+  width: auto;
+  font-size: 10px;
+}
+.sandw {
+  display: flex;
+  flex-direction: row;
+}
+.inswitch {
+  width: 11.27rem;
+}
+.outlgt {
+  display: flex;
+  flex-direction: row;
+}
+.hding {
+  text-align: center;
+  margin: 1.38rem auto;
+  margin-bottom: 5rem;
+}
+.wires #fa8 {
+  position: relative;
+  left: -2.2rem;
+}
+.gate .muxgape {
+  display: flex;
+  flex-direction: row;
+  margin-top: 0.22rem;
+  height: 2.44rem;
+}
+
+@media (max-width: 1600px){
+  .sim-box{
+    display: flex;
+    flex-direction: column;
+  }
+  .ckt{
+    margin: auto;
+    margin-bottom: 30px;
+  }
+}

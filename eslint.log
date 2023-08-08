@@ -1,0 +1,11 @@
+
+/home/runner/work/exp-sa1-3x8-decoders-nitk/exp-sa1-3x8-decoders-nitk/experiment/simulation/js/script.js
+    6:9   warning  'row' is assigned a value but never used  no-unused-vars
+   10:10  warning  'clr_tab' is defined but never used       no-unused-vars
+   14:5   warning  'id' is not defined                       no-undef
+   15:5   warning  'id' is not defined                       no-undef
+  177:10  warning  'ad_tab' is defined but never used        no-unused-vars
+  262:10  warning  'addfltpos' is defined but never used     no-unused-vars
+
+✖ 6 problems (0 errors, 6 warnings)
+

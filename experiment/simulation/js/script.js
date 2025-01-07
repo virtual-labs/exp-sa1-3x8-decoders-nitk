@@ -1,3 +1,7 @@
+function Refresh() {
+  window.location = window.location.href;
+}
+
 let tot_rows = 0;
 
 function em_tab() {
@@ -181,10 +185,10 @@ function ad_tab() {
     let s = "a" + i;
     let di = document.getElementById(s);
     if (di.style.backgroundColor == "tomato") {
-      bstr[3-i] = 0;
+      bstr[3 - i] = 0;
       inps[i] = 0;
     } else {
-      bstr[3-i] = 1;
+      bstr[3 - i] = 1;
       inps[i] = 1;
     }
   }

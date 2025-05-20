@@ -2,7 +2,7 @@
 
 ### Stuck at fault
 
-<p style="text-align:justify;">After manufacturing a chip, the number of physical defects it may have can be extremely large, potentially infinite. In many cases, it becomes impractical to count and analyze all possible faults. Therefore, during the testing of a circuit or IC, physical defects are abstracted, and logical fault models are used for analysis.</p>
+<p style="text-align:justify;">After a chip is manufactured, the number of possible physical defects can be extremely large—potentially even infinite. Because of this, identifying and analyzing every individual defect is impractical. To manage this complexity during testing, these physical defects are instead represented using logical fault models, which simplify the analysis.</p>
 
 In this way
 <ul> 
@@ -11,36 +11,78 @@ In this way
  <li>Allows for a quantitative comparison of test sets to minimize faults as much as possible.</li> 
 </ul>
 
-<p style="text-align:justify;"><strong>Note:</strong> Defining fault models doesn't imply that the circuit actually has these faults; it simply assumes the circuit behaves in that manner for analysis purposes.</p>
+<p style="text-align:justify;">This approach offers several advantages:</p>
+<ul>
+<li>>Reduces the scope of faults that need to be analyzed.</li>
+<li>Facilitates test generation and fault simulation.</li>
+<li>Enables quantitative comparison between test sets to optimize fault coverage.</li>
+</ul>
 
-<p style="text-align:justify;">Fault modeling can be done at various levels of abstraction, including Behavioral, Functional, Structural, Switch level, and Geometrical. Among these, the stuck-at fault model falls under the Structural level. It is categorized into two types: Single stuck-at fault modeling and Multiple stuck-at fault modeling.</p>
+<p style="text-align:justify;"><strong>Note:</strong> The use of fault models doesn't imply that the circuit actually contains these faults. Rather, it assumes such behavior to aid in the analysis.</p>
 
-<p style="text-align:justify;">Among the two, single stuck-at fault modeling is the most widely used. This is because:</p>
+<p style="text-align:justify;">Fault modeling can be carried out at different levels of abstraction, including:</p>
+<ul>
+ <li>Behavioral</li>
+  <li>Functional</li>
+  <li>Structural</li>
+  <li>Switch level</li>
+  <li>Geometrical</li>
+</ul>
 
-1. Its simplicity makes it highly effective and widely adopted for testing integrated circuits (ICs).
-2. Interestingly, a test set that detects all single stuck-at faults can also detect over 95% of multiple stuck-at faults.
-3. In tree-like circuits, it is capable of detecting all multiple stuck-at faults.
+<p style="text-align:justify;">Among these, the stuck-at fault model belongs to the structural level. It comes in two main types:</p>
+<ol>
+ <li>Single stuck-at fault model</li>
+ <li>Multiple stuck-at fault model</li>
+</ol>
+
+<p style="text-align:justify;">The single stuck-at fault model is the most widely used because:</p>
+<ol>
+ <li>Its simplicity makes it efficient and highly adopted in IC testing.</li>
+ <li>Test sets designed for single stuck-at faults can detect over 95% of multiple stuck-at faults.</li>
+ <li>In tree-structured circuits, it can even detect all multiple stuck-at faults.</li>
+</ol>
 
 ### Decoder 
 
-<p style="text-align:justify;">A decoder is a combinational logic circuit that translates binary information from n input lines into a maximum of 2<sup>n</sup> distinct output lines.</p>
+<p style="text-align:justify;">A decoder is a combinational circuit that converts n binary input signals into a maximum of 2ⁿ distinct output lines.</p>
 
  <center><img src="./images/2.png"/></center>
 
-<p style="text-align:justify;">Sometimes, an additional input called "Enable" is provided to control the activation of the circuit. The decoder is active when the Enable input is at logic level "1" and inactive when it is at logic level "0". Essentially, the decoder translates the binary-coded inputs into a corresponding output. Since n bits can represent 2<sup>n</sup> combinations, the decoder uses n inputs to activate one specific output line (set to "1"), while all other output lines remain at "0".</p>
+<p style="text-align:justify;">An optional Enable input is often included to control the circuit's activation:</p>
+<ul>
+ <li>When Enable = 1 → Decoder is active.</li>
+ <li>When Enable = 0 → Decoder is inactive.</li>
+</ul>
+
+<p style="text-align:justify;">The decoder interprets binary inputs to activate exactly one of the 2ⁿ output lines (setting it to ‘1’), while all others remain at ‘0’.</p>
 
 ### 4x16 decoder using 3x8 decoder 
 
-<p style="text-align:justify;">The parallel inputs A0, A1, and A2 are applied to both 3x8 decoders, while an additional input A3 serves as the enable signal. Depending on the value of A3, one of the two decoders is activated: when A3 is '0', the first decoder is enabled, producing outputs D0 to D7 (representing the first eight minterms); when A3 is '1', the second decoder is enabled, generating outputs D8 to D15 (representing the last eight minterms).</p>
+<p style="text-align:justify;">Constructing a 4x16 Decoder Using 3x8 Decoders:</p>
+<p style="text-align:justify;">To build a 4x16 decoder:</p>
+
+
+<p style="text-align:justify;">Operation:</p>
+<ul>
+ <li>When A3 = 0 → First decoder is enabled, producing outputs D0–D7 (minterms 0–7).</li>
+ <li>When A3 = 1 → Second decoder is enabled, producing outputs D8–D15 (minterms 8–15).</li>
+</ul>
 
  <center><img src="images/3x18to4x16.png"/></center>
 
-### Effect of stuck at fault 
+### Impact of Stuck-at Faults
 
-<p style="text-align:justify;">When there are no stuck-at faults in a circuit, it functions correctly. However, achieving a digital circuit completely free of stuck-at faults is nearly impossible. Fortunately, various detection techniques can identify these faults to a certain extent. These techniques involve applying different test sets to detect stuck-at faults at specific positions within the circuit.</p>
+<p style="text-align:justify;">A fault-free circuit operates as expected. However, in practice, it's nearly impossible to eliminate stuck-at faults entirely. Thankfully, fault detection methods exist to identify these issues by applying specific test sets to detect faults at targeted circuit locations.</p>
 
-<p style="text-align:justify;">To reduce the number of required test sets—since their quantity grows exponentially with the number of input lines, output lines, and fan-out branches—we apply certain principles such as the Law of Dominance and the Law of Equivalence. A circuit with numerous faulty lines tends to behave abnormally, as those lines are fixed at incorrect logic levels. Therefore, to ensure proper circuit functionality, it is essential to minimize the presence of stuck-at faults as much as possible.</p>
+<p style="text-align:justify;">Since the number of required test sets increases exponentially with inputs, outputs, and fan-outs, optimization techniques such as:</p>
+<ul>
+ <li>The Law of Dominance, and</li>
+ <li>The Law of Equivalence</li>
+</ul>
+<p style="text-align:justify;">are used to minimize test efforts.</p>
+<p style="text-align:justify;">When multiple lines in a circuit are affected by stuck-at faults (i.e., forced to remain at incorrect logic levels), the circuit’s behavior becomes abnormal. Therefore, minimizing such faults is crucial for ensuring correct functionality.</p>
 
  <center><img src="images/saf-de.png"/></center>
 
- <p style="text-align:justify;">In the above figure, stuck-at-1 faults at positions 11, 12, and 28 result in abnormal outputs from the 4x16 decoder.</p>
+ <p style="text-align:justify;">For example, in the circuit shown, stuck-at-1 faults at positions 11, 12, and 28 cause erroneous outputs in the 4x16 decoder.</p>
+ 

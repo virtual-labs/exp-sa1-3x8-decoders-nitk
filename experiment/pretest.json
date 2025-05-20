@@ -11,7 +11,7 @@
       },
       "explanations": {
         "a": "",
-        "b": "",
+        "b": "A decoder is a combinational circuit as its outputs depend only on the current inputs, not on past states.",
         "c": "",
         "d": ""
       },
@@ -22,17 +22,17 @@
       "question": "Decoder converts _____________ inputs to _____________ outputs.",
       "answers": {
         "a": "2^N, N",
-        "b": "N, 2^N",
-        "c": "N, 2N",
+        "b": "N, 2N",
+        "c": "N, 2^N",
         "d": "2N, N"
       },
       "explanations": {
         "a": "",
         "b": "",
-        "c": "",
+        "c": "A decoder takes N binary inputs and activates one of 2^N unique output lines based on the input combination.",
         "d": ""
       },
-      "correctAnswer": "b",
+      "correctAnswer": "c",
       "difficulty": "beginner"
     },
     {
@@ -44,7 +44,7 @@
         "d": "None of the above"
       },
       "explanations": {
-        "a": "",
+        "a": "Although more complex in nature, multiple stuck-at fault models can reduce overall test generation complexity by detecting multiple faults simultaneously, improving test efficiency in some cases.",
         "b": "",
         "c": "",
         "d": ""
@@ -62,11 +62,11 @@
       },
       "explanations": {
         "a": "",
-        "b": "",
+        "b": "A decoder is used in CPUs to translate binary instruction codes into specific control signals for execution.",
         "c": "",
         "d": ""
       },
-      "correctAnswer": "c",
+      "correctAnswer": "b",
       "difficulty": "beginner"
     },
     {
@@ -78,7 +78,7 @@
         "d": "All of the above"
       },
       "explanations": {
-        "a": "",
+        "a": "A 4x16 decoder can be built hierarchically using one 2x4 decoder to select among four 2x4 decoders, totaling five, with enable inputs used to control output activation.",
         "b": "",
         "c": "",
         "d": ""

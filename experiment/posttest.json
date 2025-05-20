@@ -11,7 +11,7 @@
       },
       "explanations": {
         "a": "",
-        "b": "",
+        "b": "Each of the K lines can be stuck at logic 0 or logic 1, resulting in 2K possible single stuck-at faults. ",
         "c": "",
         "d": ""
       },
@@ -27,7 +27,7 @@
         "d": "8"
       },
       "explanations": {
-        "a": "",
+        "a": "A decoder with 4 input lines can produce a maximum of 2⁴ = 16 distinct output lines.",
         "b": "",
         "c": "",
         "d": ""
@@ -46,7 +46,7 @@
       "explanations": {
         "a": "",
         "b": "",
-        "c": "",
+        "c": " A decoder uses inverters to generate complemented inputs and AND gates to combine input combinations for generating unique outputs.",
         "d": ""
       },
       "correctAnswer": "c",
@@ -57,16 +57,16 @@
       "answers": {
         "a": "Behavioral",
         "b": "Functional",
-        "c": "Structural",
-        "d": "Switch Level"
+        "c": "Switch Level",
+        "d": "Structural"
       },
       "explanations": {
         "a": "",
         "b": "",
         "c": "",
-        "d": ""
+        "d": "Stuck-at fault modeling assumes faults at specific lines or nodes in the circuit’s structure, making it a structural-level fault model."
       },
-      "correctAnswer": "c",
+      "correctAnswer": "d",
       "difficulty": "advanced"
     },
     {
@@ -80,7 +80,7 @@
       "explanations": {
         "a": "",
         "b": "",
-        "c": "",
+        "c": "Fault equivalence groups faults that produce the same erroneous behavior, allowing test cases to be minimized by testing only one representative from each group.",
         "d": ""
       },
       "correctAnswer": "c",

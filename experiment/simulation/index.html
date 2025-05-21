@@ -1,13 +1,283 @@
 <!DOCTYPE html>
-<html>
-<head>
-	<!-- Add CSS at the head of HTML file -->
-    <link rel="stylesheet" href="./css/main.css">
-</head>
-<body>
-		<!-- Your code goes here-->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SOLVE</title>
+    
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link
+      rel="stylesheet"
+      href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css"
+    />
+    <link rel="stylesheet" href="css/general.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/query.css" />
+    <script
+      defer
+      src="https://code.jquery.com/jquery-3.7.0.min.js" 
+      integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="
+      crossorigin="anonymous"
+    ></script>
+    <script src='https://cdn.plot.ly/plotly-2.12.1.min.js'></script>
+    <title>Virtual Lab</title>
+    <script src='https://cdn.plot.ly/plotly-2.18.2.min.js'></script>
 
-	<!-- Add JS at the bottom of HTML file --> 
-        <script src="./js/main.js"></script>
-</body>
+  </head>
+  <body>
+    <div class="container">
+    <div class="title-div-container">
+      <div class="title-div">
+          <div class="logo-div">
+            <a href="#"><img src="images/logo_nitk.png" alt="Logo" class="logo" /></a>
+          </div>
+          <h1>Detection of SA1 faults on a VLSI circuit for 4x16 decoder constructed with two 3x8 decoders
+          </h1>
+        </div>
+      </div>
+      <div class="sidebar">
+        <ul class="tool-menu">
+
+          
+          <li class="tool-list tool-practice" >
+            <a class="tool-link" title="Experiment"
+              ><img src="./images/solution.png" alt="solution" class="icons"
+              ></a
+              >
+              <span>Simulation</span>
+          </li>
+
+          
+          <li class="tool-list tool-practice" onclick="ad_tab()">
+            <a class="tool-link" title="Run"
+              ><img src="./images/run.png" alt="solution" class="icons"
+              ></a
+              >
+              <span>Run</span>
+          </li>
+
+          <li class="tool-list tool-help" onclick="displayDiv(this)">
+            <a class="tool-link" title="Help" onclick="Refresh()"
+              ><img src="./images/bluecwdull.svg" alt="Help" class="icons"
+              ></a
+              >
+              <span>Refresh</span>
+          </li>
+          
+        </ul>
+      </div> 
+      <div class="main">
+        <div class="main-section">
+          <div id="simulation" class="main__task-div">
+            <h3 class="task-title">Simulation</h3>
+           
+            <div class="canvas__div">
+              <!-- <div class="task-screen apparatus hide">
+              </div> -->
+              <div class="task-screen practice">
+                  <span id="Rfvalue" style="display:none ;"></span>
+                  <div>
+                  </div>     
+                  
+                  <div class="grid-container">
+                    <div class="div1">
+                
+                      <div class="circuit">
+                        <div class="inswitch" >
+                            <div class="wires">
+            
+                                <div class="sandw">
+                                  <button id="a0"  class="btn" style="background-color:tomato" onclick="chnclr('a0')">A0</button>
+                                <div class="wire">
+                                  <button type="button" id="fa1" class="iposs" onclick="addfltpos('fa1')"><span>1</span></button>
+                                  <button type="button" id="fa9" class="iposs" onclick="addfltpos('fa9')"><span>9</span></button> </div>
+                                </div>
+            
+                                <div class="sandw">
+                                  <button id="a1"  class="btn" style="background-color:tomato" onclick="chnclr('a1')">A1</button>
+                                <div class="wire">
+                                  <button type="button" id="fa2" class="iposs" onclick="addfltpos('fa2')"><span>2</span></button>
+                                  <button type="button" id="fa10" class="iposs" onclick="addfltpos('fa10')"><span>10</span></button> </div>
+                                </div>
+                                <div class="sandw">
+                                  <button id="a2"  class="btn" style="background-color:tomato" onclick="chnclr('a2')">A2</button>
+                                <div class="wire">
+                                  <button type="button" id="fa3" class="iposs" onclick="addfltpos('fa3')"><span>3</span></button>
+                                  <button type="button" id="fa11" class="iposs" onclick="addfltpos('fa11')"><span>11</span></button> </div>
+                                </div>
+                                <div class="sandw" style="visibility: hidden;">
+                                <button id="vcc" class="btn"  style="background-color:tomato" onclick="chnclr('vcc')">VCC</button>
+                                <div class="wire" style="margin: 1.19rem 0px;"> </div>
+                                </div>
+                                <div style="margin: 3rem 0px;">
+                                  <div class="sandw">
+                                      <button id="a3" class="btn" style="background-color:tomato;" onclick="chnclr('a3')">A3</button>
+                                    <div class="wire wireOne" style="">
+                                       <button type="button" id="fa4" class="iposs" onclick="addfltpos('fa4');"><span>4</span></button>
+                                       <button type="button" id="fa8" class="iposs" onclick="addfltpos('fa8')"><span>8</span></button>
+                                       <button type="button" id="fa13" class="iposs" onclick="addfltpos('fa13')"><span>13</span></button> 
+                                      </div>
+                                  </div>
+                                </div>
+                                
+                                <div class="wire wiremid5" style=""> <button  type="button" onclick="addfltpos('fa5')" id="fa5" class="iposs" ><span>5</span></button></div>
+                                <div class="wire wiremid6" style=""> <button type="button" onclick="addfltpos('fa6')" id="fa6" class="iposs" ><span>6</span></button></div>
+                                <div class="wire wiremid7" style=""> <button type="button" onclick="addfltpos('fa7')" id="fa7" class="iposs" ><span>7</span></button></div>
+                                <div class="wireDiv1" style=""></div>
+                                <div class="wire wiremid12" style=""><button type="button" onclick="addfltpos('fa12')"id="fa12" class="iposs" style="position: relative;left: 70px;"><span>12</span></button> </div>
+                            </div>
+                            <div class="hwires">
+                              <div class="wire wireH1" style=""> </div>
+                              <div class="wire wireH2" style=""></div>
+                              <div class="wire wireH3" style=""> </div>
+                              <div class="wire wireH4" style=""> </div>
+                              <div class="wire wireH5" style=""> </div>
+                           </div>
+                         <div class="ng">
+                             <img src="images/another.jpeg" alt="notgate">
+                         </div>
+                            </div>
+                            <div class="gate">
+                            <div class="mux mux1">
+                                <h3><br><br>3x8 Decoder <br><br><br><span class="e1">E</span> 
+                                
+                                </h1>
+                             </div>
+                             <div class="muxgape">
+                                 <div class="wire wiremux1" style=""></div>
+                                 <div class="wire wiremux2" style=""></div>
+                             </div>
+                            <div class="mux mux2">
+                              <h3><br><br>3x8 Decoder <br><br><br><span class="e1">E</span> 
+                            </div>
+                            <div class="wireDiv2" style="">
+                              <div class="wire wiremux3" style=""></div>
+                              <div class="wire wiremux4" style=""></div>
+                          </div>
+                            </div>
+                            <div class="owires">
+                                <div class="outlgt">
+                                    <div class="owire"><button type="button" id="fa14" class="oposs" onclick="addfltpos('fa14');"><span>14</span></button></div>
+                                    <div class="out" id="d0" >D0</div>
+                                </div>
+                                <div class="outlgt">
+                                    <div class="owire"><button type="button" id="fa15" class="oposs" onclick="addfltpos('fa15')"><span>15</span></button></div>
+                                    <div class="out" id="d1">D1</div>
+                                </div>
+                                <div class="outlgt">
+                                    <div class="owire"><button type="button" id="fa16" class="oposs" onclick="addfltpos('fa16')"><span>16</span></button></div>
+                                    <div class="out" id="d2">D2</div>
+                                </div>
+                                <div class="outlgt">
+                                    <div class="owire"><button type="button" id="fa17" class="oposs" onclick="addfltpos('fa17')"><span>17</span></button></div>
+                                    <div class="out" id="d3">D3</div>
+                                </div>
+                                <div class="outlgt">
+                                    <div class="owire"><button type="button" id="fa18" class="oposs" onclick="addfltpos('fa18')"><span>18</span></button></div>
+                                    <div class="out" id="d4">D4</div>
+                                </div>
+                                <div class="outlgt">
+                                    <div class="owire"><button type="button" id="fa19" class="oposs" onclick="addfltpos('fa19')"><span>19</span></button></div>
+                                    <div class="out" id="d5">D5</div>
+                                </div>
+                                <div class="outlgt">
+                                    <div class="owire"><button type="button" id="fa20" class="oposs" onclick="addfltpos('fa20')"><span>20</span></button></div>
+                                    <div class="out" id="d6">D6</div>
+                                </div>
+                                <div class="outlgt">
+                                    <div class="owire"><button type="button" id="fa21" class="oposs" onclick="addfltpos('fa21')"><span>21</span></button></div>
+                                    <div class="out" id="d7">D7</div>
+                                </div>
+                                <div  style="margin: 1.53rem 0px;"></div>
+                                <div class="outlgt">
+                                    <div class="owire"><button type="button" id="fa22" class="oposs" onclick="addfltpos('fa22')"><span>22</span></button></div>
+                                    <div class="out" id="d8">D8</div>
+                                </div>
+                                <div class="outlgt">
+                                    <div class="owire"><button type="button" id="fa23" class="oposs" onclick="addfltpos('fa23')"><span>23</span></button></div>
+                                    <div class="out" id="d9">D9</div>
+                                </div>
+                                <div class="outlgt">
+                                    <div class="owire"><button type="button" id="fa24" class="oposs" onclick="addfltpos('fa24')"><span>24</span></button></div>
+                                    <div class="out" id="d10">D10</div>
+                                </div>
+                                <div class="outlgt">
+                                    <div class="owire"><button type="button" id="fa25" class="oposs" onclick="addfltpos('fa25')"><span>25</span></button></div>
+                                    <div class="out" id="d11">D11</div>
+                                </div>
+                                <div class="outlgt">
+                                    <div class="owire"><button type="button" id="fa26" class="oposs" onclick="addfltpos('fa26')"><span>26</span></button></div>
+                                    <div class="out" id="d12">D12</div>
+                                </div>
+                                <div class="outlgt">
+                                    <div class="owire"><button type="button" id="fa27" class="oposs" onclick="addfltpos('fa27')"><span>27</span></button></div>
+                                    <div class="out" id="d13">D13</div>
+                                </div>
+                                <div class="outlgt">
+                                    <div class="owire"><button type="button" id="fa28" class="oposs" onclick="addfltpos('fa28')"><span>28</span></button></div>
+                                    <div class="out" id="d14">D14</div>
+                                </div>
+                                <div class="outlgt">
+                                    <div class="owire"><button type="button" id="fa29" class="oposs" onclick="addfltpos('fa29')"><span>29</span></button></div>
+                                    <div class="out" id="d15">D15</div>
+                                </div>
+            
+                            </div>
+                      </div>
+                   
+                   
+                       </div>
+                       
+                       
+                       <div class="ttable">
+                        <div class="faulty">
+                          <table id="tabl" rules="all">
+                            <thead>
+                              <tr>
+                                <th>A3</th>
+                                <th>A2</th>
+                                <th>A1</th>
+                                <th>A0</th>
+                                <th>D0</th>
+                                <th>D1</th>
+                                <th>D2</th>
+                                <th>D3</th>
+                                <th>D4</th>
+                                <th>D5</th>
+                                <th>D6</th>
+                                <th>D7</th>
+                                <th>D8</th>
+                                <th>D9</th>
+                                <th>D10</th>
+                                <th>D11</th>
+                                <th>D12</th>
+                                <th>D13</th>
+                                <th>D14</th>
+                                <th>D15</th>
+                                <th>SA1@</th>
+                              </tr>
+                            </thead>
+                            <tbody id="tbdy">
+                              <!-- Dynamic table rows can go here -->
+                            </tbody>
+                          </table>
+                        </div>
+                        
+                     </div>
+                       
+        </div>
+          </div>
+          
+        </div>
+        </div>
+          <div class="main__task-div footer">
+            <p>Copyright © SOLVE The Virtual Lab @ NITK Surathkal</p>
+          </div>
+        </div>
+    </div>
+    <script defer src="js/script.js"></script>
+  </body>
 </html>

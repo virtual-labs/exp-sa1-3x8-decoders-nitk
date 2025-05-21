@@ -2,38 +2,89 @@
   "version": 2.0,
   "questions": [
     {
-      "question": "This is a Sample Question 1?",
+      "question": "For a circuit with K lines _____________ single stuck at fault is possible.",
       "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
+        "a": "K",
+        "b": "2K",
+        "c": "K/2",
+        "d": "K^2"
       },
       "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
+        "a": "",
+        "b": "Each of the K lines can be stuck at logic 0 or logic 1, resulting in 2K possible single stuck-at faults. ",
+        "c": "",
+        "d": ""
       },
-      "correctAnswer": "a",
+      "correctAnswer": "b",
       "difficulty": "beginner"
     },
     {
-      "question": "This is a Sample Question 2?",
+      "question": "In a decoder if input lines are 4 then the no of maximum output lines will be _____________ .",
       "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
+        "a": "16",
+        "b": "2",
+        "c": "4",
+        "d": "8"
       },
       "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
+        "a": "A decoder with 4 input lines can produce a maximum of 2⁴ = 16 distinct output lines.",
+        "b": "",
+        "c": "",
+        "d": ""
+      },
+      "correctAnswer": "a",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "Decoder is constructed from _____________ .",
+      "answers": {
+        "a": "Inverters",
+        "b": "AND gate",
+        "c": "Both A and B",
+        "d": "None of the above"
+      },
+      "explanations": {
+        "a": "",
+        "b": "",
+        "c": " A decoder uses inverters to generate complemented inputs and AND gates to combine input combinations for generating unique outputs.",
+        "d": ""
       },
       "correctAnswer": "c",
-      "difficulty": "beginner"
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "Stuck at fault modeling comes under _____________ level fault model.",
+      "answers": {
+        "a": "Behavioral",
+        "b": "Functional",
+        "c": "Switch Level",
+        "d": "Structural"
+      },
+      "explanations": {
+        "a": "",
+        "b": "",
+        "c": "",
+        "d": "Stuck-at fault modeling assumes faults at specific lines or nodes in the circuit’s structure, making it a structural-level fault model."
+      },
+      "correctAnswer": "d",
+      "difficulty": "advanced"
+    },
+    {
+      "question": "Fault test cases can be minimized by which of the following ?",
+      "answers": {
+        "a": "Fault deletion",
+        "b": "Fault rectification",
+        "c": "Fault equivalence",
+        "d": "None of these"
+      },
+      "explanations": {
+        "a": "",
+        "b": "",
+        "c": "Fault equivalence groups faults that produce the same erroneous behavior, allowing test cases to be minimized by testing only one representative from each group.",
+        "d": ""
+      },
+      "correctAnswer": "c",
+      "difficulty": "advanced"
     }
   ]
 }
